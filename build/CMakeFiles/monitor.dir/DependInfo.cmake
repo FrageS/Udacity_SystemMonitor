@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/vtd/Udacity/GIT/Udacity_SystemMonitor/src/format.cpp" "/home/vtd/Udacity/GIT/Udacity_SystemMonitor/build/CMakeFiles/monitor.dir/src/format.cpp.o"
-  "/home/vtd/Udacity/GIT/Udacity_SystemMonitor/src/linux_parser.cpp" "/home/vtd/Udacity/GIT/Udacity_SystemMonitor/build/CMakeFiles/monitor.dir/src/linux_parser.cpp.o"
-  "/home/vtd/Udacity/GIT/Udacity_SystemMonitor/src/main.cpp" "/home/vtd/Udacity/GIT/Udacity_SystemMonitor/build/CMakeFiles/monitor.dir/src/main.cpp.o"
-  "/home/vtd/Udacity/GIT/Udacity_SystemMonitor/src/ncurses_display.cpp" "/home/vtd/Udacity/GIT/Udacity_SystemMonitor/build/CMakeFiles/monitor.dir/src/ncurses_display.cpp.o"
-  "/home/vtd/Udacity/GIT/Udacity_SystemMonitor/src/process.cpp" "/home/vtd/Udacity/GIT/Udacity_SystemMonitor/build/CMakeFiles/monitor.dir/src/process.cpp.o"
-  "/home/vtd/Udacity/GIT/Udacity_SystemMonitor/src/processor.cpp" "/home/vtd/Udacity/GIT/Udacity_SystemMonitor/build/CMakeFiles/monitor.dir/src/processor.cpp.o"
-  "/home/vtd/Udacity/GIT/Udacity_SystemMonitor/src/system.cpp" "/home/vtd/Udacity/GIT/Udacity_SystemMonitor/build/CMakeFiles/monitor.dir/src/system.cpp.o"
+  "/home/han/Udacity/Udacity_SystemMonitor/src/format.cpp" "/home/han/Udacity/Udacity_SystemMonitor/build/CMakeFiles/monitor.dir/src/format.cpp.o"
+  "/home/han/Udacity/Udacity_SystemMonitor/src/linux_parser.cpp" "/home/han/Udacity/Udacity_SystemMonitor/build/CMakeFiles/monitor.dir/src/linux_parser.cpp.o"
+  "/home/han/Udacity/Udacity_SystemMonitor/src/main.cpp" "/home/han/Udacity/Udacity_SystemMonitor/build/CMakeFiles/monitor.dir/src/main.cpp.o"
+  "/home/han/Udacity/Udacity_SystemMonitor/src/ncurses_display.cpp" "/home/han/Udacity/Udacity_SystemMonitor/build/CMakeFiles/monitor.dir/src/ncurses_display.cpp.o"
+  "/home/han/Udacity/Udacity_SystemMonitor/src/process.cpp" "/home/han/Udacity/Udacity_SystemMonitor/build/CMakeFiles/monitor.dir/src/process.cpp.o"
+  "/home/han/Udacity/Udacity_SystemMonitor/src/processor.cpp" "/home/han/Udacity/Udacity_SystemMonitor/build/CMakeFiles/monitor.dir/src/processor.cpp.o"
+  "/home/han/Udacity/Udacity_SystemMonitor/src/system.cpp" "/home/han/Udacity/Udacity_SystemMonitor/build/CMakeFiles/monitor.dir/src/system.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
