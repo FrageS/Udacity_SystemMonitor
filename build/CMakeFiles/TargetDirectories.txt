@@ -1,0 +1,3 @@
+/home/vtd/Udacity/GIT/Udacity_SystemMonitor/build/CMakeFiles/rebuild_cache.dir
+/home/vtd/Udacity/GIT/Udacity_SystemMonitor/build/CMakeFiles/monitor.dir
+/home/vtd/Udacity/GIT/Udacity_SystemMonitor/build/CMakeFiles/edit_cache.dir
