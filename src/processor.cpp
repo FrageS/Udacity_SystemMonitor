@@ -2,30 +2,20 @@
 #include <string>
 using std::string;
 #include "linux_parser.h"
+using LinuxParser::CPUStates;
 
 // DONE: Return the aggregate CPU utilization
-float Processor::Utilization() { 
-  string total_proc, key, user, nice, system, idle, iowait, irq, softirq, steal, guest, guest_nice;
-  float Idle, NonIdle, Total, CPU_Percentage, total_t, idle_t;
-  string line;
-  std::ifstream stream("/proc/stat");
-  if (stream.is_open()) {    
-    while (std::getline(stream, line)) {
-      std::istringstream linestream(line);      
-      while(linestream >> key >> user >> nice >> system >> idle >> iowait >> irq >> softirq >> steal >> guest >> guest_nice) {
-        if(key == "cpu") { 
-          Idle = strtof(idle.c_str(),0) + strtof(iowait.c_str(),0);           
-          NonIdle = strtof(user.c_str(),0) + strtof(nice.c_str(),0) + strtof(system.c_str(),0) +
-           strtof(irq.c_str(),0) + strtof(softirq.c_str(),0) + strtof(steal.c_str(),0);
-          Total = Idle + NonIdle;
-          total_t = Total - GetIdle() - GetNonIdle();
-          idle_t = Idle - GetIdle();
-          
-          CPU_Percentage = (total_t - idle_t)/total_t; 
-        }
-      } 
-    }
-  } 
+float Processor::Utilization() {   
+  std::vector<std::string> cpu_util = LinuxParser::CpuUtilization();
+  float Idle, NonIdle, Total, CPU_Percentage, total_t, idle_t;  
+  Idle = strtof(cpu_util[CPUStates::kIdle_].c_str(),0) + strtof(cpu_util[CPUStates::kIOwait_].c_str(),0);
+  NonIdle = strtof(cpu_util[CPUStates::kUser_].c_str(),0) + strtof(cpu_util[CPUStates::kNice_].c_str(),0) + strtof(cpu_util[CPUStates::kSystem_].c_str(),0) +
+           strtof(cpu_util[CPUStates::kIRQ_].c_str(),0) + strtof(cpu_util[CPUStates::kSoftIRQ_].c_str(),0) + strtof(cpu_util[CPUStates::kSteal_].c_str(),0); 
+  Total = Idle + NonIdle; 
+  total_t = Total - GetIdle() - GetNonIdle();
+  idle_t = Idle - GetIdle();          
+  CPU_Percentage = (total_t - idle_t)/total_t; 
+
   // Set values for previous state 
   SetIdle(Idle);
   SetNonIdle(NonIdle);

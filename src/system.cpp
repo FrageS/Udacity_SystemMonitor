@@ -16,50 +16,39 @@ using std::vector;
 
 // ------------------------------------- DONE --------------------------------------------------//
 // DONE: Return the system's kernel identifier (string)
-std::string System::Kernel() {
-    string const& os_kernel = LinuxParser::Kernel();
-    return os_kernel; 
-}
+std::string System::Kernel() { return LinuxParser::Kernel(); }
 
 // DONE: Return the operating system name
-std::string System::OperatingSystem() { 
-    string const& os_string = LinuxParser::OperatingSystem();    
-    return os_string;     
-}
+std::string System::OperatingSystem() { return LinuxParser::OperatingSystem(); }
 
 // DONE: Return the number of seconds since the system started running
-long int System::UpTime() { 
-    long const& time_ = LinuxParser::UpTime();
-    
-    return time_; 
-}
+long int System::UpTime() { return LinuxParser::UpTime(); }
 
 // DONE: Return the system's memory utilization
-float System::MemoryUtilization() { 
-    float const& mem_util = LinuxParser::MemoryUtilization();
-    return mem_util;     
-}
+float System::MemoryUtilization() { return LinuxParser::MemoryUtilization(); }
 
 // DONE: Return the number of processes actively running on the system
-int System::RunningProcesses() { 
-    int const& running_proc = LinuxParser::RunningProcesses();
-    return running_proc; 
-}
+int System::RunningProcesses() { return LinuxParser::RunningProcesses(); }
 
 // DONE: Return the total number of processes on the system
-int System::TotalProcesses() { 
-    int const& total_proc = LinuxParser::TotalProcesses();
-    return total_proc; 
-}
+int System::TotalProcesses() { return LinuxParser::TotalProcesses(); }
 
 // DONE: Return the system's CPU
 Processor& System::Cpu() { return cpu_; }
 // ------------------------------------- TODO --------------------------------------------------//
 
 
-
 // TODO: Return a container composed of the system's processes
-vector<Process>& System::Processes() { return processes_; }
+vector<Process>& System::Processes() { 
+    processes_.clear();
+    auto pids = LinuxParser::Pids();
+    for(int pid : pids)
+    {
+        processes_.push_back(Process(pid));
+    }
+    std::sort(processes_.begin(), processes_.end());
+    return processes_; 
+}
 
 
 
