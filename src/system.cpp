@@ -14,20 +14,12 @@ using std::size_t;
 using std::string;
 using std::vector;
 
-// TODO: Return the system's CPU
-Processor& System::Cpu() { return cpu_; }
-
-// TODO: Return a container composed of the system's processes
-vector<Process>& System::Processes() { return processes_; }
-
+// ------------------------------------- DONE --------------------------------------------------//
 // DONE: Return the system's kernel identifier (string)
 std::string System::Kernel() {
     string const& os_kernel = LinuxParser::Kernel();
     return os_kernel; 
 }
-
-// TODO: Return the system's memory utilization
-float System::MemoryUtilization() { return 0.0; }
 
 // DONE: Return the operating system name
 std::string System::OperatingSystem() { 
@@ -35,15 +27,39 @@ std::string System::OperatingSystem() {
     return os_string;     
 }
 
-// TODO: Return the number of processes actively running on the system
-int System::RunningProcesses() { return 0; }
-
-// TODO: Return the total number of processes on the system
-int System::TotalProcesses() { return 0; }
-
-// TODO: Return the number of seconds since the system started running
+// DONE: Return the number of seconds since the system started running
 long int System::UpTime() { 
     long const& time_ = LinuxParser::UpTime();
     
     return time_; 
 }
+
+// DONE: Return the system's memory utilization
+float System::MemoryUtilization() { 
+    float const& mem_util = LinuxParser::MemoryUtilization();
+    return mem_util;     
+}
+
+// DONE: Return the number of processes actively running on the system
+int System::RunningProcesses() { 
+    int const& running_proc = LinuxParser::RunningProcesses();
+    return running_proc; 
+}
+
+// DONE: Return the total number of processes on the system
+int System::TotalProcesses() { 
+    int const& total_proc = LinuxParser::TotalProcesses();
+    return total_proc; 
+}
+
+// DONE: Return the system's CPU
+Processor& System::Cpu() { return cpu_; }
+// ------------------------------------- TODO --------------------------------------------------//
+
+
+
+// TODO: Return a container composed of the system's processes
+vector<Process>& System::Processes() { return processes_; }
+
+
+
