@@ -14,6 +14,7 @@ string Format::ElapsedTime(long seconds) {
     seconds_ = seconds % 60;
     hours = minutes / 60;
     minutes = minutes % 60;
+    //Append a 0-digit if time is only 1 digit
     string hours_hh = string(2-std::to_string(hours).size(),'0').append(std::to_string(hours));
     string minutes_mm = string(2-std::to_string(minutes).size(),'0').append(std::to_string(minutes));
     string seconds_ss = string(2-std::to_string(seconds_).size(),'0').append(std::to_string(seconds_));
