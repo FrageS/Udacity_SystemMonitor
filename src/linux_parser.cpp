@@ -3,14 +3,14 @@
 #include <string>
 #include <vector>
 #include <unistd.h>
-//#include <experimental/filesystem>
+#include <experimental/filesystem>
 #include "linux_parser.h"
 
 using std::stof;
 using std::string;
 using std::to_string;
 using std::vector;
-//namespace fs = std::experimental::filesystem;
+namespace fs = std::experimental::filesystem;
 // ------------------------------------- DONE --------------------------------------------------//
 // DONE: An example of how to read data from the filesystem
 string LinuxParser::OperatingSystem() {
